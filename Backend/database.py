@@ -98,3 +98,28 @@ async def init_db() -> None:
                 pass
 
         await conn.run_sync(_migrate_defense_cols)
+
+        def _seed_default_users(sync_conn):
+            from sqlalchemy import text
+            from passlib.context import CryptContext
+            from datetime import datetime
+            try:
+                res = sync_conn.execute(text("SELECT COUNT(*) FROM admins"))
+                if res.scalar() == 0:
+                    pwd_ctx = CryptContext(schemes=["bcrypt"], deprecated="auto")
+                    h = pwd_ctx.hash("password123")
+                    now_str = datetime.utcnow().isoformat()
+                    sync_conn.execute(
+                        text("INSERT INTO admins (name, email, password_hash, created_at, updated_at) VALUES (:n, :e, :p, :c, :u)"),
+                        {"n": "Admin User", "e": "admin@edumaster.com", "p": h, "c": now_str, "u": now_str}
+                    )
+                    st_res = sync_conn.execute(text("SELECT COUNT(*) FROM students"))
+                    if st_res.scalar() == 0:
+                        sync_conn.execute(
+                            text("INSERT INTO students (name, email, student_code, password_hash, created_at, updated_at) VALUES (:n, :e, :sc, :p, :c, :u)"),
+                            {"n": "Kasun Perera", "e": "kasun@example.com", "sc": "IT-2024-001", "p": h, "c": now_str, "u": now_str}
+                        )
+            except Exception:
+                pass
+
+        await conn.run_sync(_seed_default_users)
