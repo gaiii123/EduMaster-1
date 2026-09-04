@@ -1,0 +1,404 @@
+.student-viva {
+  padding: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.student-viva__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.student-viva__header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.6rem;
+  color: var(--text);
+}
+
+.student-viva__welcome {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.student-viva__alibaba-tag {
+  color: #ff6a00;
+  font-weight: 600;
+}
+
+.student-viva__controls {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.student-viva__controls select {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.student-viva__end-button {
+  padding: 0.5rem 1.2rem;
+  border: 1px solid var(--danger);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--danger);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.student-viva__end-button:hover:not(:disabled) {
+  background: var(--danger);
+  color: #fff;
+}
+
+.student-viva__end-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* --- Completed State --- */
+.student-viva__completed {
+  padding: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.student-viva__completed h2 {
+  margin: 0 0 1rem;
+  color: var(--success);
+  font-size: 1.8rem;
+}
+
+.student-viva__completed p {
+  margin: 0 0 1.5rem;
+  color: var(--text-muted);
+}
+
+.student-viva__dashboard-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.8rem;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: opacity 0.15s;
+}
+
+.student-viva__dashboard-link:hover {
+  opacity: 0.9;
+}
+
+/* --- Studio Grid Layout --- */
+.student-viva__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(360px, 440px);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 1100px) {
+  .student-viva__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.student-viva__main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* --- Side Panel (Chat + Evaluation) --- */
+.student-viva__panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.15rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Tab header in side panel */
+.student-viva__panel-tabs {
+  display: flex;
+  background: var(--hover);
+  border-radius: 10px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.student-viva__panel-tab {
+  flex: 1;
+  padding: 0.5rem 0.35rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.student-viva__panel-tab:hover:not(.active) {
+  color: var(--text);
+}
+
+.student-viva__panel-tab.active {
+  background: var(--surface);
+  color: var(--primary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Quick scores header inside chat tab */
+.student-viva__quick-scores {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(99, 102, 241, 0.06);
+  border: 1px dashed rgba(99, 102, 241, 0.28);
+  border-radius: 8px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-bottom: 0.6rem;
+}
+
+.student-viva__quick-scores:hover {
+  background: rgba(99, 102, 241, 0.12);
+}
+
+.student-viva__quick-scores-link {
+  font-size: 0.72rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* --- Transcript Log Inside Side Panel --- */
+.student-viva__transcript {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-viva__messages {
+  max-height: 520px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-right: 0.4rem;
+}
+
+.student-viva__messages--split {
+  max-height: 260px;
+}
+
+.student-viva__bubble {
+  max-width: 95%;
+  padding: 0.7rem 0.9rem;
+  border-radius: 12px;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.student-viva__bubble-sender {
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  opacity: 0.85;
+}
+
+.student-viva__bubble--assistant {
+  align-self: flex-start;
+  background: var(--hover);
+  color: var(--text);
+  border-bottom-left-radius: 4px;
+}
+
+.student-viva__bubble--feedback {
+  background: rgba(234, 179, 8, 0.08);
+  border: 1px solid rgba(234, 179, 8, 0.28);
+  color: var(--text);
+}
+
+.student-viva__bubble--question {
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  color: var(--text);
+  font-weight: 500;
+}
+
+.student-viva__bubble--misconception {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.22);
+  color: var(--text);
+}
+
+.student-viva__bubble--user {
+  align-self: flex-end;
+  background: var(--primary);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.student-viva__bubble--typing {
+  opacity: 0.8;
+  font-style: italic;
+  color: var(--primary);
+}
+
+.dots::after {
+  content: '';
+  animation: blink 1.2s steps(3) infinite;
+}
+@keyframes blink {
+  0%   { content: '.'; }
+  33%  { content: '..'; }
+  66%  { content: '...'; }
+}
+
+/* --- Eval Content Section --- */
+.student-viva__eval-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.student-viva__eval-content--split {
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border);
+}
+
+.student-viva__eval-content h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.student-viva__scores {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.student-viva__placeholder-hint {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: var(--hover);
+  border-radius: 10px;
+  color: var(--text-muted);
+}
+
+.student-viva__hint-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.student-viva__placeholder-hint p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+/* --- Side Multimodal Telemetry --- */
+.student-viva__side-telemetry {
+  background: var(--hover);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.student-viva__side-telemetry h4 {
+  margin: 0 0 0.2rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.student-viva__metric-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.student-viva__metric-status {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.student-viva__placement h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* --- Eval Header & Model Badge --- */
+.student-viva__eval-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.student-viva__eval-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.student-viva__eval-model-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  color: #818cf8;
+}
+
+.student-viva__eval-model-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.student-viva__eval-req-id {
+  color: var(--text-muted);
+  font-family: monospace;
+  font-size: 0.7rem;
+}

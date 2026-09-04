@@ -1,0 +1,41 @@
+version: 1
+scope:
+  include: []
+  exclude:
+    - "node_modules/**"
+    - "__pycache__/**"
+    - ".venv/**"
+    - "*.pyc"
+    - "dist/**"
+    - "build/**"
+
+repowiki:
+  template: "architecture"
+  notes:
+    - text: "EduMaster is an educational platform with a FastAPI (Python) backend and React.js frontend."
+    - text: "Backend uses Alibaba Cloud DashScope for AI-powered evaluation features."
+    - text: "The routers/ directory follows a modular pattern — each domain gets its own APIRouter file."
+    - text: "CORS is configured to allow all origins for local development; tighten for production."
+  documents:
+    - title: "Project Overview"
+      goal: "High-level description of EduMaster: purpose, tech stack, and how to run locally."
+      parent: ""
+    - title: "Backend Architecture"
+      goal: "Document the FastAPI backend structure, entry point, middleware, and router pattern."
+      parent: ""
+    - title: "Evaluation Module"
+      goal: "Describe the evaluation router, its intended endpoints, and DashScope integration for AI grading."
+      parent: "Backend Architecture"
+    - title: "Frontend Architecture"
+      goal: "Describe the React frontend structure, component patterns, and how it connects to the backend API."
+      parent: ""
+    - title: "API Contracts"
+      goal: "Document the API endpoints, request/response shapes, and data flow between frontend and backend."
+      parent: ""
+
+knowledgecard:
+  notes:
+    - text: "Backend module: FastAPI app in main.py, routers in routers/ directory, one file per domain."
+    - text: "AI integration: DashScope SDK for LLM-based evaluation; expect evaluation logic in routers/evaluation.py."
+    - text: "Frontend module: React.js app (to be created); will consume backend REST API."
+    - text: "Project convention: keep routers modular, use Pydantic v2 for request/response validation."

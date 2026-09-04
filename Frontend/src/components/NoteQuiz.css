@@ -1,0 +1,168 @@
+/* ==========================================================
+   NoteQuiz — end-of-note MCQ with instant feedback
+   ========================================================== */
+
+.note-quiz {
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 2px dashed var(--border);
+}
+
+.note-quiz h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.note-quiz__intro {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ---- Score banner ---- */
+.note-quiz__score {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1rem;
+  border-radius: var(--radius);
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.note-quiz__score.good {
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.note-quiz__score.low {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.note-quiz__score span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.note-quiz__retake {
+  margin-left: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.note-quiz__retake:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.note-quiz__error {
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+/* ---- Questions ---- */
+.note-quiz__question {
+  margin-bottom: 1.6rem;
+}
+
+.note-quiz__question h3 {
+  font-size: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.note-quiz__options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.note-quiz__option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: left;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+}
+
+.note-quiz__option:disabled {
+  cursor: default;
+}
+
+.note-quiz__option:hover:not(:disabled) {
+  border-color: var(--primary);
+}
+
+.note-quiz__option.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.note-quiz__option.correct {
+  border-color: var(--success);
+  background: rgba(34, 197, 94, 0.09);
+}
+
+.note-quiz__option.wrong {
+  border-color: var(--danger);
+  background: rgba(239, 68, 68, 0.07);
+}
+
+.note-quiz__option-label {
+  flex-shrink: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--hover);
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.note-quiz__mark {
+  margin-left: auto;
+  font-weight: 700;
+}
+
+.note-quiz__option.correct .note-quiz__mark {
+  color: var(--success);
+}
+
+.note-quiz__option.wrong .note-quiz__mark {
+  color: var(--danger);
+}
+
+/* ---- Submit ---- */
+.note-quiz__submit {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.7rem 1.6rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.15s;
+}
+
+.note-quiz__submit:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.note-quiz__submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

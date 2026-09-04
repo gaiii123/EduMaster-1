@@ -1,0 +1,400 @@
+.student-dashboard {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.student-dashboard__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.student-dashboard__header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.6rem;
+}
+
+.student-dashboard__welcome {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.student-dashboard__viva-button {
+  padding: 0.6rem 1.4rem;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: opacity 0.15s;
+}
+
+.student-dashboard__viva-button:hover {
+  opacity: 0.9;
+}
+
+.student-dashboard__status {
+  color: var(--text-muted);
+  text-align: center;
+  padding: 2rem;
+}
+
+.student-dashboard__section {
+  margin-bottom: 2.5rem;
+}
+
+.student-dashboard__section h2 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.student-dashboard__no-placement {
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.student-dashboard__no-placement p {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+}
+
+.student-dashboard__cta {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: opacity 0.15s;
+}
+
+.student-dashboard__cta:hover {
+  opacity: 0.9;
+}
+
+.student-dashboard__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.student-dashboard__table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+.student-dashboard__table th,
+.student-dashboard__table td {
+  padding: 0.65rem 1rem;
+  text-align: left;
+}
+
+.student-dashboard__table th {
+  background: var(--hover);
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.student-dashboard__table td {
+  border-top: 1px solid var(--border);
+}
+
+.student-dashboard__placeholder {
+  padding: 2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.student-dashboard__placeholder p {
+  margin: 0 0 0.5rem;
+}
+
+.student-dashboard__placeholder p:last-child {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+/* --- Viva Assessment Stages Roadmap --- */
+.student-dashboard__section-subtitle {
+  margin: 0.25rem 0 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.student-dashboard__stages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.student-dashboard__stage-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.student-dashboard__stage-card.active {
+  border-color: var(--primary);
+  box-shadow: 0 8px 24px -6px rgba(99, 102, 241, 0.18);
+}
+
+.student-dashboard__stage-card.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -8px rgba(99, 102, 241, 0.25);
+}
+
+.student-dashboard__stage-card.completed {
+  border-color: var(--success);
+  background: linear-gradient(180deg, var(--surface) 0%, rgba(34, 197, 94, 0.03) 100%);
+}
+
+.student-dashboard__stage-card.locked {
+  opacity: 0.65;
+  background: var(--hover);
+  border-style: dashed;
+}
+
+.student-dashboard__stage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.student-dashboard__stage-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.3rem 0.65rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-active {
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--primary);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.badge-completed {
+  background: rgba(34, 197, 94, 0.12);
+  color: var(--success);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.badge-locked {
+  background: rgba(148, 163, 184, 0.12);
+  color: var(--text-muted);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.student-dashboard__stage-number {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.student-dashboard__stage-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.student-dashboard__stage-card h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.student-dashboard__stage-card p {
+  margin: 0 0 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.student-dashboard__stage-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.65rem 0.8rem;
+  background: var(--hover);
+  border-radius: 8px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.student-dashboard__stage-btn {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.student-dashboard__stage-btn.primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.student-dashboard__stage-btn.primary:hover {
+  opacity: 0.92;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.student-dashboard__stage-btn.secondary {
+  background: var(--hover);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.student-dashboard__stage-btn.secondary:hover {
+  background: var(--border);
+}
+
+.student-dashboard__stage-btn.disabled {
+  background: var(--border);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* ---- My Learning ---- */
+.student-dashboard__section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.student-dashboard__learning {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.student-dashboard__learning-summary {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.student-dashboard__learning-bar {
+  flex-grow: 1;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.student-dashboard__learning-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.student-dashboard__learning-summary span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.student-dashboard__learning-subjects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 0.6rem;
+}
+
+.student-dashboard__learning-subject {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--hover);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.85rem;
+  font-size: 0.83rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.15s;
+}
+
+.student-dashboard__learning-subject:hover {
+  border-color: var(--primary);
+}
+
+.student-dashboard__learning-subject strong {
+  color: var(--primary);
+}
+
+.student-dashboard__learning-rows {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.student-dashboard__learning-rows h4 {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.student-dashboard__learning-rows ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.student-dashboard__learning-rows a {
+  font-size: 0.88rem;
+  text-decoration: none;
+}
+
+.student-dashboard__learning-rows a:hover {
+  text-decoration: underline;
+}

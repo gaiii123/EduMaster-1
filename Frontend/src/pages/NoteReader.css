@@ -1,0 +1,423 @@
+/* ==========================================================
+   NoteReader — interactive Markdown reading experience
+   ========================================================== */
+
+.note-reader {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+.note-reader__status {
+  color: var(--text-muted);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+/* ---- Sticky toolbar ---- */
+.note-reader__sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  margin-bottom: 1.75rem;
+}
+
+.note-reader--dark .note-reader__sticky-top {
+  background: #0f172a;
+}
+
+.note-reader__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0.7rem 0.25rem 0;
+}
+
+.note-reader__toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.note-reader__back {
+  font-size: 0.85rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.note-reader__back:hover {
+  text-decoration: underline;
+}
+
+.note-reader__reading-time {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.note-reader__toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.note-reader__tool {
+  background: var(--hover);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+  white-space: nowrap;
+}
+
+.note-reader__tool:hover:not(:disabled) {
+  border-color: var(--primary);
+}
+
+.note-reader__tool:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.note-reader__tool.active {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ---- Reading progress bar ---- */
+.note-reader__progress-track {
+  width: 100%;
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.note-reader__progress-fill {
+  height: 100%;
+  background: var(--primary);
+  transition: width 0.1s linear;
+}
+
+/* ---- AI Study Tools bar ---- */
+.note-reader__ai-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.25rem 0.6rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.note-reader__ai-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-right: 0.35rem;
+  white-space: nowrap;
+}
+
+.note-reader__ai-btn {
+  background: var(--hover);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+  white-space: nowrap;
+}
+
+.note-reader__ai-btn:hover {
+  border-color: var(--primary);
+}
+
+.note-reader__ai-btn.active {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ---- Source badges ---- */
+.note-reader__badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  margin-bottom: 0.9rem;
+}
+
+.note-reader__badge--ai {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.note-reader__badge--photo {
+  background: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+}
+
+/* ---- AI digest: summary + flashcards ---- */
+.note-reader__digest {
+  max-width: 860px;
+  margin: 16px auto 0;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.note-reader__digest h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.note-reader__digest-status {
+  margin: 8px 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.note-reader__summary-points {
+  margin: 0 0 14px 1.2rem;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.note-reader__summary-points li {
+  margin-bottom: 0.3rem;
+}
+
+.note-reader__flashcards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.note-reader__flashcard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 110px;
+  padding: 14px;
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.note-reader__flashcard:hover {
+  border-color: var(--primary);
+}
+
+.note-reader__flashcard.flipped {
+  background: var(--primary-light);
+  border-color: var(--primary);
+}
+
+.note-reader__flashcard-hint {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+}
+
+/* ---- Article typography ---- */
+.note-reader__article {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem 2.25rem;
+  line-height: 1.75;
+  transition: background 0.25s, color 0.25s;
+}
+
+.note-reader__article h1 {
+  font-size: 1.6em;
+  margin-bottom: 0.75em;
+  line-height: 1.3;
+}
+
+.note-reader__article h2 {
+  font-size: 1.25em;
+  margin: 1.4em 0 0.6em;
+}
+
+.note-reader__article h3 {
+  font-size: 1.08em;
+  margin: 1.2em 0 0.5em;
+}
+
+.note-reader__article p {
+  margin-bottom: 0.9em;
+}
+
+.note-reader__article ul,
+.note-reader__article ol {
+  margin: 0 0 1em 1.4em;
+}
+
+.note-reader__article li {
+  margin-bottom: 0.35em;
+}
+
+.note-reader__article blockquote {
+  border-left: 4px solid var(--primary);
+  background: var(--primary-light);
+  padding: 0.6rem 1rem;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 1em;
+}
+
+.note-reader__article blockquote p {
+  margin-bottom: 0;
+}
+
+.note-reader__article code {
+  background: var(--hover);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  font-size: 0.88em;
+}
+
+.note-reader__article pre {
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  margin-bottom: 1em;
+}
+
+.note-reader__article pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: 0.85em;
+}
+
+.note-reader__article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+  font-size: 0.92em;
+}
+
+.note-reader__article th,
+.note-reader__article td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.note-reader__article th {
+  background: var(--hover);
+}
+
+.note-reader__article hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5em 0;
+}
+
+/* ---- Dark reading mode ---- */
+.note-reader--dark .note-reader__article {
+  background: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+.note-reader--dark .note-reader__article blockquote {
+  background: rgba(79, 70, 229, 0.2);
+}
+
+.note-reader--dark .note-reader__article code {
+  background: #334155;
+}
+
+.note-reader--dark .note-reader__article pre {
+  background: #0b1120;
+}
+
+.note-reader--dark .note-reader__article th,
+.note-reader--dark .note-reader__article td {
+  border-color: #334155;
+}
+
+.note-reader--dark .note-reader__article th {
+  background: #334155;
+}
+
+.note-reader--dark .note-reader__article hr {
+  border-top-color: #334155;
+}
+
+/* ---- Pager ---- */
+.note-reader__pager {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.note-reader__pager-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  max-width: 46%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.8rem 1rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.15s;
+}
+
+.note-reader__pager-link:hover {
+  border-color: var(--primary);
+}
+
+.note-reader__pager-link span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.note-reader__pager-link--next {
+  margin-left: auto;
+  text-align: right;
+}
+
+@media (max-width: 640px) {
+  .note-reader__article {
+    padding: 1.25rem 1.1rem;
+  }
+
+  .note-reader__pager {
+    flex-direction: column;
+  }
+
+  .note-reader__pager-link {
+    max-width: 100%;
+  }
+}

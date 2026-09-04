@@ -1,0 +1,111 @@
+.dashboard {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.dashboard__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+.dashboard__header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.6rem;
+}
+
+.dashboard__subtitle {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* --- student selector --- */
+.dashboard__select {
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text);
+  min-width: 240px;
+}
+
+.dashboard__select:focus {
+  outline: 2px solid var(--primary-light);
+  border-color: var(--primary);
+}
+
+/* --- status / error --- */
+.dashboard__status {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.dashboard__error {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--danger);
+  background: #fef2f2;
+  color: var(--danger);
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* --- placement section --- */
+.dashboard__placement {
+  margin-bottom: 1.75rem;
+}
+
+/* --- mastery cards grid --- */
+.dashboard__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+/* --- chart --- */
+.dashboard__chart {
+  margin-bottom: 2rem;
+}
+
+/* --- history table --- */
+.dashboard__history h2 {
+  font-size: 1.15rem;
+  margin: 0 0 0.75rem;
+}
+
+.dashboard__table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+.dashboard__table th,
+.dashboard__table td {
+  padding: 0.65rem 1rem;
+  text-align: left;
+}
+
+.dashboard__table th {
+  background: var(--hover);
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.dashboard__table td {
+  border-top: 1px solid var(--border);
+}

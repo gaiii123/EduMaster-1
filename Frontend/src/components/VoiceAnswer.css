@@ -1,0 +1,102 @@
+.voice-answer {
+  margin-top: 12px;
+  padding: 12px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+
+.voice-answer__controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.voice-answer__btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 999px;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.voice-answer__btn:hover:not(:disabled) {
+  background: var(--primary);
+  color: #fff;
+}
+
+.voice-answer__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.voice-answer__btn--stop {
+  background: var(--danger);
+  color: #fff;
+}
+
+.voice-answer__btn--stop:hover {
+  background: #dc2626;
+  color: #fff;
+}
+
+.voice-answer__pulse {
+  font-size: 13px;
+  color: var(--danger);
+  font-weight: 600;
+  animation: voice-answer-blink 1s infinite;
+}
+
+@keyframes voice-answer-blink {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.voice-answer__busy {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.voice-answer__error {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--danger);
+}
+
+.voice-answer__transcript {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.voice-answer__feedback {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  line-height: 1.5;
+}
+
+.voice-answer__feedback--correct {
+  background: rgba(34, 197, 94, 0.12);
+  color: #15803d;
+}
+
+.voice-answer__feedback--partial {
+  background: rgba(245, 158, 11, 0.14);
+  color: #b45309;
+}
+
+.voice-answer__feedback--incorrect {
+  background: rgba(239, 68, 68, 0.12);
+  color: #b91c1c;
+}

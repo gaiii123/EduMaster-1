@@ -1,0 +1,187 @@
+/* ==========================================================
+   Subject view — note list for one subject
+   ========================================================== */
+
+.subject-view {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.subject-view__status {
+  color: var(--text-muted);
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.subject-view__back {
+  display: inline-block;
+  font-size: 0.85rem;
+  text-decoration: none;
+  margin-bottom: 1.25rem;
+}
+
+.subject-view__back:hover {
+  text-decoration: underline;
+}
+
+/* ---- Header ---- */
+.subject-view__header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.subject-view__icon {
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.subject-view__heading h1 {
+  font-size: 1.6rem;
+}
+
+.subject-view__heading p {
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* ---- Progress bar ---- */
+.subject-view__progress {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.75rem;
+}
+
+.subject-view__progress-bar {
+  flex-grow: 1;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.subject-view__progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.subject-view__progress span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* ---- Note rows ---- */
+.subject-view__notes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.subject-view__note {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+}
+
+.subject-view__note:hover {
+  border-color: var(--primary);
+  transform: translateX(3px);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.07);
+}
+
+.subject-view__note-index {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--border);
+  flex-shrink: 0;
+  width: 2.2rem;
+}
+
+.subject-view__note-body {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.subject-view__note-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.subject-view__note-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.15rem 0.5rem;
+  white-space: nowrap;
+}
+
+.subject-view__note-badge--ai {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+.subject-view__note-badge--photo {
+  background: rgba(245, 158, 11, 0.15);
+  color: #b45309;
+}
+
+.subject-view__note-title-row h3 {
+  font-size: 1rem;
+}
+
+.subject-view__note-body p {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.subject-view__note-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+.subject-view__note-time {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.subject-view__note-read {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.subject-view__note-read.done {
+  color: var(--success);
+}
+
+@media (max-width: 640px) {
+  .subject-view__note {
+    flex-wrap: wrap;
+  }
+
+  .subject-view__note-meta {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

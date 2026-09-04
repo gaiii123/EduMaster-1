@@ -1,0 +1,37 @@
+.mastery-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+
+.mastery-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.mastery-card__label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.mastery-card__score {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.mastery-card__track {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--hover);
+  overflow: hidden;
+}
+
+.mastery-card__fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}

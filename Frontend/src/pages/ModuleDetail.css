@@ -1,0 +1,638 @@
+/* ==========================================================
+   Module Detail (Image 2 replica - LMS / Moodle Style)
+   ========================================================== */
+
+.module-detail-page {
+  font-family: inherit;
+  background: #f1f5f9;
+  min-height: 100vh;
+  padding-bottom: 5rem;
+}
+
+/* Deep Blue Header Banner */
+.module-header-banner {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 2rem 2rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.module-header-content {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.module-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #bae6fd;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  transition: color 0.15s;
+}
+
+.module-breadcrumb:hover {
+  color: #ffffff;
+}
+
+.module-banner-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+/* Sub-navigation tabs (Course, Participants, Grades, Activities) */
+.module-nav-tabs {
+  display: flex;
+  gap: 0.25rem;
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.module-tab-btn {
+  background: transparent;
+  border: none;
+  color: #e0f2fe;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.module-tab-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.module-tab-btn.active {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Main Content Area */
+.module-main-container {
+  max-width: 1240px;
+  margin: 2rem auto 0;
+  padding: 0 1.5rem;
+}
+
+/* Enroll CTA banner */
+.module-guest-banner {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.module-guest-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #92400e;
+  font-weight: 500;
+}
+
+/* Course Action Bar (Collapse All / Expand All) */
+.module-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.collapse-toggle-btn {
+  background: transparent;
+  border: none;
+  color: #0284c7;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.collapse-toggle-btn:hover {
+  text-decoration: underline;
+}
+
+/* Sections Accordion Stack */
+.sections-accordion-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.section-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+
+.section-card-header {
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid transparent;
+  transition: background 0.15s;
+}
+
+.section-card-header:hover {
+  background: #f8fafc;
+}
+
+.section-card-header.is-open {
+  border-bottom-color: #f1f5f9;
+}
+
+.section-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.section-chevron {
+  font-size: 0.8rem;
+  color: #64748b;
+  transition: transform 0.2s;
+}
+
+.section-chevron.rotated {
+  transform: rotate(90deg);
+}
+
+.section-title-text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.section-items-badge {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.section-admin-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Section Body & Items */
+.section-body {
+  padding: 0.75rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.section-desc-note {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+/* Item row matching Image 2 */
+.module-item-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+
+.module-item-row:hover {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+.module-item-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  flex: 1;
+}
+
+/* Distinct icons */
+.item-type-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: #ffffff;
+}
+
+.item-type-icon--announcement {
+  background: #0284c7;
+}
+
+.item-type-icon--file {
+  background: #ef4444;
+}
+
+.item-type-icon--slide {
+  background: #2563eb;
+}
+
+.item-type-icon--note {
+  background: #059669;
+}
+
+.item-type-icon--assignment {
+  background: #db2777;
+}
+
+.item-type-icon--quiz {
+  background: #ca8a04;
+}
+
+.module-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.module-item-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.module-item-title:hover {
+  color: #0284c7;
+}
+
+.module-item-desc {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.module-item-meta-badges {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+}
+
+.badge-sub-info {
+  color: #64748b;
+}
+
+.badge-sub-done {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.badge-sub-graded {
+  background: #dcfce7;
+  color: #15803d;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.badge-quiz-score {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.add-activity-btn-row {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.btn-add-activity {
+  background: transparent;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  color: #0284c7;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  width: 100%;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.btn-add-activity:hover {
+  background: #f0f9ff;
+  border-color: #0284c7;
+}
+
+/* Participants and Grades tables */
+.table-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.table-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.lms-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.lms-table th {
+  text-align: left;
+  padding: 0.85rem 1rem;
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 700;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.lms-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #1e293b;
+}
+
+.lms-table tr:hover td {
+  background: #f8fafc;
+}
+
+/* ============================================================ */
+/*  100-Point Weighted Gradebook & Formula Styles               */
+/* ============================================================ */
+
+.formula-banner-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.formula-header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.formula-icon {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formula-pillars-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.formula-pillar-chip {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  border-left: 4px solid;
+}
+
+.formula-pillar-chip.written {
+  background: #eff6ff;
+  border-left-color: #2563eb;
+}
+.formula-pillar-chip.viva {
+  background: #f0fdf4;
+  border-left-color: #16a34a;
+}
+.formula-pillar-chip.asgn {
+  background: #f5f3ff;
+  border-left-color: #7c3aed;
+}
+.formula-pillar-chip.pres {
+  background: #fffbeb;
+  border-left-color: #d97706;
+}
+
+.chip-weight {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.chip-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #334155;
+  margin-top: 0.25rem;
+}
+
+.chip-sub {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.15rem;
+}
+
+/* Student Hero Grade Card */
+.student-hero-grade-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.75rem;
+  color: #0f172a;
+  margin-bottom: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.hero-grade-main {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+}
+
+.hero-letter-badge {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981, #059669);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+  flex-shrink: 0;
+}
+
+.hero-letter-badge .letter-txt {
+  font-size: 2.2rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.hero-letter-badge .status-txt {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #d1fae5;
+  margin-top: 0.2rem;
+}
+
+.hero-score-meta {
+  flex: 1;
+  min-width: 260px;
+}
+
+.hero-total-val {
+  font-size: 2.4rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #38bdf8;
+}
+
+.hero-total-max {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.hero-student-name {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 1.2rem;
+  color: #0f172a;
+}
+
+.hero-desc {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+/* 4 Pillars KPI Grid */
+.pillars-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.pillar-kpi-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.pillar-kpi-card .kpi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.pillar-kpi-card .kpi-icon {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #475569;
+}
+
+.pillar-kpi-card .kpi-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.pillar-kpi-card .kpi-pts {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.1;
+}
+
+.pillar-kpi-card .kpi-max {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #94a3b8;
+  margin-left: 0.25rem;
+}
+
+.pillar-kpi-card .kpi-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 0.4rem;
+}
+
+.pillar-kpi-card .kpi-detail {
+  font-size: 0.76rem;
+  color: #94a3b8;
+  margin-top: 0.2rem;
+}
+
+/* 100-Point Gradebook Table */
+.gradebook-100pt-table th {
+  white-space: nowrap;
+}
+
+.gradebook-100pt-table td {
+  vertical-align: middle;
+}
